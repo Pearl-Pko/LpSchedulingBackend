@@ -12,11 +12,11 @@ def index():
 # Define parameters
 num_days = 6  # Number of days in a week (Monday to Saturday)
 num_shifts = 3  # Number of shifts per day (morning, afternoon, evening)
-num_rest_days = 2
 
 @app.route("/allocate-shifts", methods=["POST"])
 def get_timetable():
     num_employees = request.json["num_employees"]
+    num_rest_days = request.json["num_rest_days"]
     
     # Create a new ILP problem
     prob = pulp.LpProblem("Hospital_Shift_Management", pulp.LpMaximize)
