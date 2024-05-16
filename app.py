@@ -68,4 +68,6 @@ def handle_exception(error):
     # Return a JSON response with error message
     return jsonify({"status": "error", 'message': 'Internal Server Error'}), 500
 
-app.run(debug=True)
+
+if __name__ == "main":
+    app.run(debug=True)
